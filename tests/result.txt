@@ -1,0 +1,33 @@
+
+[2mRunning [22m3[2m tests using [22m1[2m worker[22m
+
+[1A[2K[1/3] todo-list.spec.ts:31:7 › Todo List › should add a new item to todo list
+[1A[2K[1/3] todo-list.spec.ts:23:16 › Todo List › should add a new item to todo list › Input new todo item on todo list with name: Task name to add on the list
+[1A[2K[1/3] todo-list.spec.ts:31:7 › Todo List › should add a new item to todo list
+[1A[2K[1/3] todo-list.spec.ts:29:16 › Todo List › should add a new item to todo list › Press enter after provide task name
+[1A[2K[1/3] todo-list.spec.ts:31:7 › Todo List › should add a new item to todo list
+[1A[2K[1/3] todo-list.spec.ts:35:16 › Todo List › should add a new item to todo list › Refresh item list
+[1A[2K[1/3] todo-list.spec.ts:31:7 › Todo List › should add a new item to todo list
+[1A[2K[2/3] todo-list.spec.ts:39:7 › Todo List › should add and remove item from todo list
+[1A[2K[2/3] todo-list.spec.ts:23:16 › Todo List › should add and remove item from todo list › Input new todo item on todo list with name: Task name to add add dele
+[1A[2K[2/3] todo-list.spec.ts:39:7 › Todo List › should add and remove item from todo list
+[1A[2K[2/3] todo-list.spec.ts:29:16 › Todo List › should add and remove item from todo list › Press enter after provide task name
+[1A[2K[2/3] todo-list.spec.ts:39:7 › Todo List › should add and remove item from todo list
+[1A[2K[2/3] todo-list.spec.ts:35:16 › Todo List › should add and remove item from todo list › Refresh item list
+[1A[2K[2/3] todo-list.spec.ts:39:7 › Todo List › should add and remove item from todo list
+[1A[2K[2/3] todo-list.spec.ts:42:16 › Todo List › should add and remove item from todo list › Hover item do delete with name:Task name to add add dele 
+[1A[2K[2/3] todo-list.spec.ts:39:7 › Todo List › should add and remove item from todo list
+[1A[2K[2/3] todo-list.spec.ts:45:16 › Todo List › should add and remove item from todo list › Press delete button for todo item wiht name :Task name to add add dele 
+[1A[2K[2/3] todo-list.spec.ts:39:7 › Todo List › should add and remove item from todo list
+[1A[2K[3/3] todo-list.spec.ts:47:7 › Todo List › should incresse item list size  by one after adding new element
+[1A[2K[3/3] todo-list.spec.ts:53:16 › Todo List › should incresse item list size  by one after adding new element › Count size of todo list} 
+[1A[2K[3/3] todo-list.spec.ts:47:7 › Todo List › should incresse item list size  by one after adding new element
+[1A[2K[3/3] todo-list.spec.ts:23:16 › Todo List › should incresse item list size  by one after adding new element › Input new todo item on todo list with name: Task name to add on the list
+[1A[2K[3/3] todo-list.spec.ts:47:7 › Todo List › should incresse item list size  by one after adding new element
+[1A[2K[3/3] todo-list.spec.ts:29:16 › Todo List › should incresse item list size  by one after adding new element › Press enter after provide task name
+[1A[2K[3/3] todo-list.spec.ts:47:7 › Todo List › should incresse item list size  by one after adding new element
+[1A[2K[3/3] todo-list.spec.ts:35:16 › Todo List › should incresse item list size  by one after adding new element › Refresh item list
+[1A[2K[3/3] todo-list.spec.ts:47:7 › Todo List › should incresse item list size  by one after adding new element
+[1A[2K[3/3] todo-list.spec.ts:53:16 › Todo List › should incresse item list size  by one after adding new element › Count size of todo list} 
+[1A[2K[3/3] todo-list.spec.ts:47:7 › Todo List › should incresse item list size  by one after adding new element
+[1A[2K[32m  3 passed[39m[2m (3.2s)[22m
