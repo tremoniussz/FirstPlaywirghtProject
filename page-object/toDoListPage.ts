@@ -7,12 +7,12 @@ export class TodoListPage {
   private readonly urlTodoList = 'https://webdriveruniversity.com/To-Do-List/index.html';
   private page: Page;
   private addNewTodoInput: Locator;
-  itemList: Locator;
+  private itemList: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.addNewTodoInput = page.locator('[placeholder="Add new todo"]');
-    this.itemList = page.locator("li");
+    this.itemList = page.locator('li');
   }
 
   async navigate() {
@@ -49,9 +49,20 @@ export class TodoListPage {
     })
   }
 
+  async getAllTextContextFromLiItems() {
+    let allTextContents;
+    await test.step(`Get all text from li element `, async () => {
+      allTextContents = await this.itemList.allTextContents();
+    })
+    return allTextContents;
+  }
+
   async getToDoItemListSize() {
     //added empty test step, could not add return in test.step def
-    await test.step(`Count size of todo list} `, async () => { })
-    return await this.itemList.count();
+    let listSize;
+    await test.step(`Count size of todo list`, async () => {
+      listSize = await this.itemList.count();
+    })
+    return listSize;
   }
 }
