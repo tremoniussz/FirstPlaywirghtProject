@@ -31,7 +31,7 @@ test.describe("Todo List", () => {
     await todoListPage.inputItemName(DictionaryTaskNames.ToDoName)
     await todoListPage.pressEnterToAddNewItem()
     await todoListPage.refreshItemList();
-    expect((await todoListPage.itemList.allTextContents()).includes(DictionaryTaskNames.ToDoName));
+    expect((await todoListPage.getAllTextContextFromLiItems()).includes(DictionaryTaskNames.ToDoName));
   });
 
   //Test deleting an item from the Todo List
@@ -40,16 +40,17 @@ test.describe("Todo List", () => {
     await todoListPage.pressEnterToAddNewItem()
     await todoListPage.refreshItemList();
     await todoListPage.deleteItemFromListByItemName(DictionaryTaskNames.ToDeleteName);
-    expect((await todoListPage.itemList.allTextContents()).includes(DictionaryTaskNames.ToDeleteName)).not;
+    expect((await todoListPage.getAllTextContextFromLiItems()).includes(DictionaryTaskNames.ToDeleteName)).not;
   });
 
+  //Test to check count elemenst on the list
   test("should incresse item list size by one after adding new element", async () => {
-    //const listSizeBeforeAdding = await todoListPage.getToDoItemListSize();
+    const listSizeBeforeAdding = await todoListPage.getToDoItemListSize();
     await todoListPage.inputItemName(DictionaryTaskNames.ToDoName)
     await todoListPage.pressEnterToAddNewItem()
     await todoListPage.refreshItemList();
-    //const listSizeAfterAddNewItem = await todoListPage.getToDoItemListSize();
-    //expect(listSizeAfterAddNewItem).toBe(listSizeBeforeAdding + 1);
+    const listSizeAfterAddNewItem = await todoListPage.getToDoItemListSize();
+    expect(listSizeAfterAddNewItem).toBe(listSizeBeforeAdding + 1);
   });
 
 });
