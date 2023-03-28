@@ -1,10 +1,10 @@
 import { Page, Locator, test } from "@playwright/test";
-import { keysDictionary } from "../data/key_data";
-
-const urlTodoList = 'https://webdriveruniversity.com/To-Do-List/index.html'
+import { KeysDictionary } from "../data/keyData"
+import { DictionaryTaskNames } from "../data/taskName"
 
 export class TodoListPage {
 
+  private readonly urlTodoList = 'https://webdriveruniversity.com/To-Do-List/index.html';
   private page: Page;
   private addNewTodoInput: Locator;
   itemList: Locator;
@@ -16,18 +16,18 @@ export class TodoListPage {
   }
 
   async navigate() {
-    await this.page.goto(urlTodoList);
+    await this.page.goto(this.urlTodoList);
   }
 
-  async inputItemName(newItemName: string) {
-    await test.step(`Input new todo item on todo list with name: ${newItemName}`, async () => {
-      await this.addNewTodoInput?.type(newItemName);
+  async inputItemName(newItemName: DictionaryTaskNames) {
+    await test.step(`Input new todo item on todo list with name: ${newItemName.toString()}`, async () => {
+      await this.addNewTodoInput?.type(newItemName.toString());
     })
   }
 
   async pressEnterToAddNewItem() {
     await test.step(`Press enter after provide task name`, async () => {
-      await this.addNewTodoInput?.press(keysDictionary["ENTER"]);
+      await this.addNewTodoInput?.press(KeysDictionary.ENTER.toString());
     })
   }
 
@@ -37,12 +37,12 @@ export class TodoListPage {
     })
   }
 
-  async deleteItemFromListByItemName(itemToDelete: string) {
-    const listItem = this.page.locator('li').getByText(itemToDelete)
-    await test.step(`Hover item do delete with name:${itemToDelete} `, async () => {
+  async deleteItemFromListByItemName(itemToDelete: DictionaryTaskNames) {
+    const listItem = this.page.locator('li').getByText(itemToDelete.toString())
+    await test.step(`Hover item do delete with name:${itemToDelete.toString()} `, async () => {
       await listItem.hover()
     })
-    await test.step(`Press delete button for todo item wiht name :${itemToDelete} `, async () => {
+    await test.step(`Press delete button for todo item wiht name :${itemToDelete.toString()} `, async () => {
       const deleteButton = listItem.locator('span');
       await deleteButton.click();
       await listItem.waitFor({ state: 'hidden' });
@@ -50,8 +50,8 @@ export class TodoListPage {
   }
 
   async getToDoItemListSize() {
+    //added empty test step, could not add return in test.step def
     await test.step(`Count size of todo list} `, async () => { })
-    return this.itemList.count();
+    return await this.itemList.count();
   }
-
 }
